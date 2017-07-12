@@ -62,6 +62,17 @@ public class PlayGround extends JPanel implements KeyListener, ActionListener {
 		// Ball
 		g.setColor(Color.yellow);
 		g.fillOval(ballposX, ballposY, 20, 20);
+		
+		if(totalBricks <= 0){
+			play = false;
+			ballXdir = 0;
+			ballYdir = 0;
+			g.setColor(Color.red);
+			g.setFont(new Font("serif", Font.BOLD, 30 ));
+			g.drawString("You Won, Score: " + score, 190, 300);
+			g.setFont(new Font("serif", Font.BOLD, 20 ));
+			g.drawString("Press Enter to Restart", 230, 350);  
+		}
 
 		if(ballposY > 570){
 			play = false;
